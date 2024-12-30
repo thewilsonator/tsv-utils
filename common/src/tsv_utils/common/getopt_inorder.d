@@ -716,7 +716,7 @@ unittest // Dashes
     assertThrown!GetOptException(getoptInorder(args, "abc", &abc));
 
     args = ["prog", "--abc=string"];
-    assertThrown!ConvException(getoptInorder(args, "abc", &abc));
+    assertThrown(getoptInorder(args, "abc", &abc));
 }
 
 @system unittest // From bugzilla 7693
